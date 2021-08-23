@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Process Scheduling Algorithms</title>
+    <link rel="stylesheet" href="CSS/project.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div class="innerHeader">
+          <h1>Process Scheduling Algorithms</h1>
+        </div>
+      </div>
+    </header>
+    <div class="forms">
+      <form id="algorithms">
+        <h3>Algorithms</h3>
+        <br />
+        <input type="radio" name="algorithms" value="fcfs" id="fcfs" />
+        <label for="fcfs">FCFS</label><br />
+        <input type="radio" name="algorithms" value="sjf" id="sjf" />
+        <label for="sjf">SJF</label><br />
+        <input type="radio" name="algorithms" value="priority" id="priority" />
+        <label for="priority">Priority Scheduling</label><br />
+        <input type="radio" name="algorithms" value="robin" id="robin" />
+        <label for="robin">Round Robin</label>
+      </form>
+    </div>
+    <div class="table">
+      <table id="inputTable" class="contentTable">
+        <thead>
+          <tr>
+            <th>Process</th>
+            <th>Arrival Time</th>
+            <th>Execute Time</th>
+            <th class="servtime">Service Time</th>
+            <th class="priority-only">Priority</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>P0</td>
+            <td>0</td>
+            <td><input class="initial exectime" type="text" value="5" /></td>
+            <td class="servtime"></td>
+            <td class="priority-only initial"><input type="text" /></td>
+          </tr>
+          <tr>
+            <td>P1</td>
+            <td>1</td>
+            <td><input class="initial exectime" value="3" /></td>
+            <td class="servtime"></td>
+            <td class="priority-only"><input type="text" /></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <input type="button" value="+" onclick="addRow();" class="plus" />
+      <div></div>
+      <p id="quantumParagraph" hidden>
+        Quantum:
+        <input style="width: 50px" id="quantum" type="text" value="3" />
+      </p>
+      <input type="button" value="Go" onclick="draw();" class="go" />
+      <br /><br />
+
+      <fresh> </fresh>
+      <p class="time">Timer: <strong id="timer"></strong> sec</p>
+    </div>
+  </body>
+</html>
